@@ -1,0 +1,13 @@
+1.  ctrl + {arrow} = takes to the last box of whichever side
+
+2.  shift + {arrow} = to select multiple rows or columns
+
+3.  shift + F11 = to add new sheets
+
+4.  ctrl + (Page Up)/(Page Down) = Navigate between multiple sheets
+
+5.  ctrl + w = Close Workbook
+
+6.  ctrl + n = New Workbook
+
+7.  ctrl + o = Open existing Workbook
