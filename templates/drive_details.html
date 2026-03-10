@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>{{ drive.job_title }}</h2>
+
+<h4>{{ drive.company.name }}</h4>
+
+<p>{{ drive.job_description }}</p>
+
+<p><b>Eligibility:</b> {{ drive.eligibility }}</p>
+
+<p><b>Deadline:</b> {{ drive.deadline }}</p>
+
+<p><b>Required Skills:</b> {{ drive.required_skills }}</p>
+
+<p><b>Experience:</b> {{ drive.experience }}</p>
+
+<p><b>Salary:</b> {{ drive.salary }}</p>
+
+<br>
+
+<a href="/student_dashboard" class="btn btn-secondary">
+Go Back
+</a>
+
+{% if drive.id in applied_drive_ids %}
+
+<button class="btn btn-secondary" disabled>
+Applied
+</button>
+
+{% else %}
+
+<a href="/apply/{{ drive.id }}" class="btn btn-success">
+Apply
+</a>
+
+{% endif %}
+
+{% endblock %}

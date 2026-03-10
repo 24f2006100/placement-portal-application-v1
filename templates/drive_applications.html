@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Update Applications for {{ drive.job_title }}</h3>
+
+<table class="table table-bordered">
+
+<tr>
+<th>Student</th>
+<th>Action</th>
+</tr>
+
+{% for app in applications %}
+
+<tr>
+
+<td>{{ app.student.name }}</td>
+
+<td>
+
+<a href="/review_application/{{ app.id }}"
+class="btn btn-primary btn-sm">
+
+Review Application
+
+</a>
+
+<a href="/student_profile/{{ app.student.id }}"
+class="btn btn-info btn-sm">
+
+View Profile
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<a href="/company_dashboard" class="btn btn-secondary">
+Back
+</a>
+
+{% endblock %}

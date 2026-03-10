@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>{{ company.name }}</h2>
+
+<h4>Overview</h4>
+
+<p>
+<b>Company website:</b>
+
+{% if company.website %}
+
+<a href="{{ company.website }}" target="_blank">
+{{ company.website }}
+</a>
+
+{% else %}
+
+Not provided
+
+{% endif %}
+
+</p>
+
+<h4>Current Drives</h4>
+
+{% for drive in drives %}
+
+<div class="border p-3 mb-3">
+
+<strong>{{ drive.job_title }}</strong>
+
+<a href="/drive_details/{{ drive.id }}"
+class="btn btn-primary btn-sm float-end">
+
+View Details
+
+</a>
+
+</div>
+
+{% endfor %}
+
+{% if session["role"] == "admin" %}
+<a href="/admin_dashboard" class="btn btn-secondary">Back</a>
+
+{% elif session["role"] == "company" %}
+<a href="/company_dashboard" class="btn btn-secondary">Back</a>
+
+{% else %}
+<a href="/student_dashboard" class="btn btn-secondary">Back</a>
+{% endif %}
+
+{% endblock %}
