@@ -1,4 +1,4 @@
-# placement-portal-application-v1
+# Placement-portal-application-v1
 This is a multi user web application that allows the institute administration, companies, and students to interact through a centralized system. The system manages placement drives, student applications, and recruitment status while ensuring proper role-based access and data management.
 
 ## Features
@@ -32,3 +32,7 @@ This is a multi user web application that allows the institute administration, c
 - **Flask-Login** – Authentication  
 
 ## How to Run the Project 
+- Open the project folder in your system.
+- Activate the virtual environment if available.
+- Install the required dependencies using the command: pip install -r requirements.txt
+- Run the application using: python app.py
