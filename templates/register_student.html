@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+<div class="col-md-6">
+
+<h3 class="text-center mb-4">Student Registration</h3>
+
+<form method="POST" enctype="multipart/form-data">
+
+<div class="mb-3">
+<label>Name</label>
+<input type="text" name="name" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Email</label>
+<input type="email" name="email" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Password</label>
+<input type="password" name="password" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Education</label>
+<input type="text" name="education" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Skills</label>
+<input type="text" name="skills" class="form-control">
+</div>
+
+<div class="mb-3">
+<label>Upload Resume</label>
+<input type="file" name="resume" class="form-control">
+</div>
+
+<button class="btn btn-success w-100">
+Register
+</button>
+
+</form>
+
+<hr>
+
+<p class="text-center">
+
+Already have an account?
+
+<a href="/login">Login</a>
+
+</p>
+
+</div>
+
+</div>
+
+{% endblock %}

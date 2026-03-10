@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+<div class="col-md-5">
+
+<h3 class="text-center mb-4">Login</h3>
+
+<form method="POST">
+
+<div class="mb-3">
+
+<label>Email</label>
+
+<input type="email" name="email" class="form-control" required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Password</label>
+
+<input type="password" name="password" class="form-control" required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Login As</label>
+
+<select name="role" class="form-control">
+
+<option value="student">Student</option>
+<option value="company">Company</option>
+<option value="admin">Admin</option>
+
+</select>
+
+</div>
+
+<button class="btn btn-primary w-100">
+
+Login
+
+</button>
+
+</form>
+
+<hr>
+
+<p class="text-center">
+
+Do not have an account?
+
+</p>
+
+<div class="d-grid gap-2">
+
+<a href="/register_student" class="btn btn-outline-primary">
+
+Register as Student
+
+</a>
+
+<a href="/register_company" class="btn btn-outline-secondary">
+
+Register as Company
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}
