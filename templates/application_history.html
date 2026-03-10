@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Student Application History</h2>
+
+<table class="table table-bordered table-striped">
+
+<thead class="table-dark">
+
+<tr>
+<th>Drive</th>
+<th>Company</th>
+<th>Status</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for app in applications %}
+
+<tr>
+
+<td>{{ app.drive.job_title }}</td>
+<td>{{ app.drive.company.name }}</td>
+<td>{{ app.status }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+<a href="/student_dashboard" class="btn btn-secondary">
+Back
+</a>
+
+{% endblock %}

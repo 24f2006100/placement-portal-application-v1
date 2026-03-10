@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+<h3>Student Dashboard</h3>
+
+</div>
+
+<form method="GET" action="/student_dashboard">
+
+<div class="input-group mb-3">
+
+<input type="text"
+name="keyword"
+class="form-control"
+placeholder="Search by company, position, skills">
+
+<button class="btn btn-primary">
+Search
+</button>
+
+</div>
+
+</form>
+
+<h4 class="mb-3">Companies</h4>
+
+<table class="table table-bordered">
+
+<tr>
+<th>Company Name</th>
+<th>Action</th>
+</tr>
+
+{% for company in companies %}
+
+<tr>
+
+<td>{{ company.name }}</td>
+
+<td>
+<a href="/company_details/{{ company.id }}" class="btn btn-primary btn-sm">
+View Details
+</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<h4 class="mt-4 mb-3">Available Job Drives</h4>
+
+<table class="table table-hover table-bordered">
+<tr>
+<th>Job Title</th>
+<th>Company</th>
+<th>Deadline</th>
+<th>Action</th>
+</tr>
+
+{% for drive in drives %}
+
+<tr>
+
+<td>{{ drive.job_title }}</td>
+
+<td>{{ drive.company.name }}</td>
+
+<td>{{ drive.deadline.strftime('%d %b %Y') }}</td>
+
+<td>
+{% if drive.id in applied_drive_ids %}
+
+<span class="badge bg-success">Applied</span>
+{% else %}
+
+<a href="/drive_details/{{ drive.id }}"
+class="btn btn-success btn-sm">
+
+View Details
+
+</a>
+
+{% endif %}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<h4 class="mt-4 mb-3">My Applications</h4>
+
+<table class="table table-bordered">
+
+<tr>
+<th>Drive Name</th>
+<th>Company</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for app in applications %}
+
+<tr>
+
+<td>{{ app.drive.job_title }}</td>
+<td>{{ app.drive.company.name }}</td>
+<td>
+
+{% if app.status == "Shortlisted" %}
+
+<span class="badge bg-success">Shortlisted</span>
+
+{% elif app.status == "Rejected" %}
+
+<span class="badge bg-danger">Rejected</span>
+
+{% elif app.status == "Selected" %}
+
+<span class="badge bg-primary">Selected</span>
+
+{% else %}
+
+<span class="badge bg-success">Applied</span>
+ 
+{% endif %}
+
+</td>
+
+
+<td>
+<a href="/drive_details/{{ app.drive.id }}" class="btn btn-sm btn-info">
+View Details
+</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Student Application</h3>
+
+<p><b>Student Name:</b> {{ application.student.name }}</p>
+
+<p><b>Drive:</b> {{ application.drive.job_title }}</p>
+
+<p><b>Status:</b> {{ application.status }}</p>
+
+<a href="/static/resumes/{{ application.student.resume }}" class="btn btn-info">View Resume </a>
+
+<form method="POST">
+
+<select name="status" class="form-control">
+
+<option value="Shortlisted">Shortlist</option>
+
+<option value="Applied">Waiting</option>
+
+<option value="Rejected">Reject</option>
+
+<option value="Selected">Selected</option>
+
+</select>
+
+<br>
+
+<button class="btn btn-success">
+Save
+</button>
+
+</form>
+
+<br>
+
+<a href="/drive_details_company/{{ application.drive.id }}"
+class="btn btn-secondary">
+
+Back
+
+</a>
+
+{% endblock %}
