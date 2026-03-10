@@ -31,8 +31,12 @@ This is a multi user web application that allows the institute administration, c
 - **Bootstrap** – UI Styling  
 - **Flask-Login** – Authentication  
 
-## How to Run the Project 
-- Open the project folder in your system.
-- Activate the virtual environment if available.
-- Install the required dependencies using the command: pip install -r requirements.txt
-- Run the application using: python app.py
+## How to Run the Project
+
+1. Open the project folder in your system.
+
+2. Install the required dependencies:
+`pip install -r requirements.txt`
+
+3. Run the application:
+`python app.py`
