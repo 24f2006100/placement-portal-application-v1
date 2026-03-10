@@ -182,15 +182,10 @@ def approve_drive(id):
 
 @app.route("/reject_drive/<int:id>")
 def reject_drive(id):
-
     drive = Drive.query.get_or_404(id)
-
     Application.query.filter_by(drive_id=id).delete()
-
     db.session.delete(drive)
-
     db.session.commit()
-
     return redirect(url_for("admin_dashboard"))
 
 
